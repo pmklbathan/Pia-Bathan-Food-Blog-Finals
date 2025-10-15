@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | DELICIOUS RECIPES</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <div id="mobile-menu-drawer">
+        <button id="close-menu-btn" aria-label="Close Menu">&times;</button>
+        <nav class="mobile-nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html"  class="active">Contact Me</a>
+        </nav>
+    </div>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        <button id="open-menu-btn" aria-label="Open Menu">&#9776;</button> 
+        <nav class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html" class="active">Contact Me</a>
+        </nav>
+    </header>
+
+    <main class="page-content contact-content">
+        <h2 class="contact-title">JOIN THE FLAVOR FEAST COMMUNITY</h2>
+        <p class="contact-subtext">If you have a question, suggestion, or recipe request you'd like to share, feel free to reach out to me below!</p>
+
+        <section class="contact-grid">
+            <div class="contact-info">
+                <h3>Contact Info</h3>
+                
+                <p>📧 Email: <a href="mailto:pmklbathan@gmail.com">pmklbathan@gmail.com</a></p>
+                <p>📍 Location: Pampanga, Philippines</p>
+                <p>☎️ Phone #: <a href="tel:+639692807071">+63 969 280 7071</a></p>
+
+                <h3 class="social-title">🌐 Social Media Links</h3>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/pia.bathan" target="_blank">
+                        <img src="img/fb.png" alt="Facebook" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;"> 
+                        Facebook &rarr; Pia Bathan
+                    </a></li>
+                    <li><a href="https://www.instagram.com/bathan.pia/" target="_blank">
+                        <img src="img/ig.png" alt="Instagram" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;"> 
+                        Instagram &rarr; @bathan.pia
+                    </a></li>
+                    <li><a href="https://www.youtube.com/@piabathan1669" target="_blank">
+                        <img src="img/yt.png" alt="YouTube" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;"> 
+                        YouTube &rarr; Pia Bathan
+                    </a></li>
+                </ul>
+            </div>
+
+            <form action="#" class="contact-form" id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="from_name" required> 
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="user_email" required> 
+
+                <label for="feedback">Feedback:</label>
+                <textarea id="message" name="message" rows="4" required></textarea> 
+
+                <button type="submit" class="primary-button form-submit-button">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Pia Mikaela E. Bathan - Food Blog</p>
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@piabathan1669" target="_blank" aria-label="YouTube">
+                    <img src="img/yt.png" alt="YouTube">
+                </a>
+                <a href="https://www.instagram.com/bathan.pia/" target="_blank" aria-label="Instagram">
+                    <img src="img/ig.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/pia.bathan" target="_blank" aria-label="Facebook">
+                    <img src="img/fb.png" alt="Facebook">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const EMAILJS_PUBLIC_KEY = 'fPD2YYaH8e68DuWV4'; 
+        const EMAILJS_SERVICE_ID = 'service_y8qtt7s';       
+        const EMAILJS_TEMPLATE_ID = 'template_80ikkom';
+        
+        /* NAVIGATION FUNCTIONALITY */
+        document.getElementById('open-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu-drawer').classList.add('is-open');
+        });
+        document.getElementById('close-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu-drawer').classList.remove('is-open');
+        });
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu-drawer').classList.remove('is-open');
+            });
+        });
+    </script>
+</body>
+</html>

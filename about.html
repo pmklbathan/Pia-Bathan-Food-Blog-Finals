@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | DELICIOUS RECIPES</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="mobile-menu-drawer">
+        <button id="close-menu-btn" aria-label="Close Menu">&times;</button>
+        <nav class="mobile-nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact Me</a>
+        </nav>
+    </div>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        <button id="open-menu-btn" aria-label="Open Menu">&#9776;</button> 
+        <nav class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact Me</a>
+        </nav>
+    </header>
+
+    <main class="page-content about-content">
+        <section class="about-section">
+            <div class="about-image-container">
+                <img src="img/me.jfif" alt="Meet the Blogger" class="blogger-photo">
+            </div>
+            <div class="about-text-container">
+                <h2 class="section-title">MEET THE BLOGGER</h2>
+                <p>Hi, I’m Pia! Cooking has always been my love language. I grew up surrounded by the smell of homemade dishes and family gatherings where food was always at the heart of every celebration. Over the years, I’ve experimented with recipes — from quick weekday meals to indulgent desserts — and discovered the joy of sharing them with others.</p>
+                <p>This blog is my little kitchen corner on the internet, where I share recipes, cooking tips, and food stories that inspire me. My goal is to make cooking approachable, fun, and delicious for everyone, whether you’re a beginner in the kitchen or a seasoned home cook. Every recipe I post is tested with love, tasted by family and friends, and shared with the hope that it brings a smile to your table too.</p>
+                <p>When I’m not spending time in my kitchen or planning my next food adventure, you can probably find me traveling locally, exploring markets, trying out new restaurants, watching documentaries, or just enjoying a relaxing day at home with my pets. Thank you for joining me on this journey, and I hope you find something delicious to inspire your next meal!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Pia Mikaela E. Bathan - Food Blog</p>
+            
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@piabathan1669" target="_blank" aria-label="YouTube">
+                    <img src="img/yt.png" alt="YouTube">
+                </a>
+                <a href="https://www.instagram.com/bathan.pia/" target="_blank" aria-label="Instagram">
+                    <img src="img/ig.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/pia.bathan" target="_blank" aria-label="Facebook">
+                    <img src="img/fb.png" alt="Facebook">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('open-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu-drawer').classList.add('is-open');
+        });
+        document.getElementById('close-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu-drawer').classList.remove('is-open');
+        });
+        
+        // Closes menu when a link is clicked
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu-drawer').classList.remove('is-open');
+            });
+        });
+    </script>
+</body>
+</html>

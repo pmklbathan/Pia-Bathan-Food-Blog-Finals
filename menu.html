@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | DELICIOUS RECIPES</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <div id="recipeModalOverlay" class="modal-overlay">
+        <div class="modal-content">
+            <button id="closeModalBtn" class="primary-button" style="float: right; margin-top: -10px; margin-bottom: 20px;">
+                &times; Close
+            </button>
+            
+            <h2 id="modalRecipeTitle" class="section-title">Recipe Title Placeholder</h2>
+            
+            <div id="modalRecipeBody">
+                </div>
+        </div>
+    </div>
+    <div id="mobile-menu-drawer">
+        <button id="close-menu-btn" aria-label="Close Menu">&times;</button>
+        <nav class="mobile-nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html" class="active">Menu</a>
+            <a href="contact.html">Contact Me</a>
+        </nav>
+    </div>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        <button id="open-menu-btn" aria-label="Open Menu">&#9776;</button> 
+        <nav class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html" class="active">Menu</a> 
+            <a href="contact.html">Contact Me</a>
+        </nav>
+    </header>
+
+    <main class="page-content menu-content">
+
+        <section class="categories-section">
+            <div class="category-placeholder"></div>
+            <div class="category-list-container">
+                <h2 class="section-title">BROWSE BY CATEGORY</h2>
+                <p class="category-subtext-new">Find the perfect recipe for every craving — from quick breakfasts to indulgent desserts</p>
+                
+                <ul class="main-category-list">
+                    <li>
+                        <span class="category-heading">1. 🥞 Breakfast</span>
+                        <ul class="sub-category-list">
+                            <li>Fluffy Pancakes with Maple Syrup</li>
+                            <li>Avocado Toast with Egg</li>
+                            <li>Berry Smoothie Bowl</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="category-heading">2. 🍛 Lunch</span>
+                        <ul class="sub-category-list">
+                            <li>Garlic Butter Shrimp with Rice</li>
+                            <li>Chicken Caesar Wrap</li>
+                            <li>Vegetarian Fried Rice</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="category-heading">3. 🍜 Dinner</span>
+                        <ul class="sub-category-list">
+                            <li>Classic Spaghetti Carbonara</li>
+                            <li>Grilled Salmon with Lemon Dill</li>
+                            <li>Beef Stir Fry with Vegetables</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="category-heading">4. 🍰 Desserts</span>
+                        <ul class="sub-category-list">
+                            <li>Chocolate Lava Cake</li>
+                            <li>Mango Cheesecake</li>
+                            <li>Cinnamon Rolls with Cream Cheese Glaze</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="category-heading">5. ☕ Drinks</span>
+                        <ul class="sub-category-list">
+                            <li>Iced Caramel Latte</li>
+                            <li>Fresh Lemon Iced Tea</li>
+                            <li>Strawberry Milkshake</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <hr style="margin: 40px 0; border: 0; border-top: 1px dashed #ccc;">
+
+
+        <section class="featured-recipes">
+            <h2 class="featured-title">FEATURED RECIPES</h2>
+            <p class="featured-subtext">Our most loved meals for your weeknight dinners, holidays, and more.</p>
+
+            <div class="featured-grid">
+                <div class="recipe-card">
+                    <p class="recipe-description">Freshly cooked spaghetti with vegetable pasta sauce, green peppers, and egg bacon, made in 30 minutes.</p>
+                    <a href="#" class="primary-button recipe-button" data-recipe-id="spaghetti">View Recipe</a>
+                    <h3 class="recipe-title">Spaghetti Carbonara</h3>
+                </div>
+                <div class="recipe-card">
+                    <p class="recipe-description">A quick breakfast of thick, fluffy pancakes made with sugar, butter, and real maple syrup. This recipe is a must-try!</p>
+                    <a href="#" class="primary-button recipe-button" data-recipe-id="pancakes">View Recipe</a>
+                    <h3 class="recipe-title">Fluffy Pancakes</h3>
+                </div>
+                <div class="recipe-card">
+                    <p class="recipe-description">Fresh herbs & butter shrimp, cooked in 10 minutes. Serve it with warm rice, pasta, or fresh french bread.</p>
+                    <a href="#" class="primary-button recipe-button" data-recipe-id="shrimp">View Recipe</a>
+                    <h3 class="recipe-title">Garlic & Butter Shrimp</h3>
+                </div>
+                <div class="recipe-card">
+                    <p class="recipe-description">Soft, chewy, and loaded with gooey chocolate chips. Easy to make!</p>
+                    <a href="#" class="primary-button recipe-button" data-recipe-id="cookies-grid">View Recipe</a>
+                    <h3 class="recipe-title">Chocolate Chip Cookies</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Pia Mikaela E. Bathan - Food Blog</p>
+            
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@piabathan1669" target="_blank" aria-label="YouTube">
+                    <img src="img/yt.png" alt="YouTube">
+                </a>
+                <a href="https://www.instagram.com/bathan.pia/" target="_blank" aria-label="Instagram">
+                    <img src="img/ig.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/pia.bathan" target="_blank" aria-label="Facebook">
+                    <img src="img/fb.png" alt="Facebook">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* MOBILE MENU DRAWER FUNCTIONALITY */
+        document.getElementById('open-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu-drawer').classList.add('is-open');
+        });
+
+        document.getElementById('close-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu-drawer').classList.remove('is-open');
+        });
+        
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu-drawer').classList.remove('is-open');
+            });
+        });
+
+        /* RECIPE DATA SOURCE */
+        const recipeData = {
+            'spaghetti': {
+                title: 'Spaghetti Carbonara',
+                prep: '20 minutes',
+                cook: '10 minutes',
+                servings: 4,
+                description: 'The creamy classic, made simple with fresh spaghetti, green peppers, egg, and bacon.',
+                ingredients: [
+                    '1 lb Spaghetti', '4 oz Pancetta or Bacon', '2 large Eggs', '1 cup Grated Parmesan', '1/2 cup Green Peppers, diced', 'Black pepper'
+                ],
+                instructions: [
+                    'Cook spaghetti al dente. Reserve 1/2 cup pasta water.', 'Fry bacon until crisp; remove pan from heat.', 
+                    'Whisk eggs and cheese vigorously.', 'Toss hot pasta with bacon, then slowly add egg mixture and pasta water, stirring constantly until creamy. Serve immediately.'
+                ]
+            },
+            'pancakes': {
+                title: 'Fluffy Pancakes',
+                prep: '5 minutes',
+                cook: '15 minutes',
+                servings: 6,
+                description: 'The ultimate weekend treat. Light, airy, and served best with warm maple syrup and butter.',
+                ingredients: [
+                    '1.5 cups Flour', '1 tbsp Baking Powder', '1 tsp Salt', '1 cup Milk', '1 Egg', '2 tbsp Melted Butter', 'Maple Syrup and Extra Butter (for topping)'
+                ],
+                instructions: [
+                    'Whisk dry ingredients.', 'In a separate bowl, whisk wet ingredients.', 
+                    'Pour wet ingredients into dry and mix until just combined (lumps are okay).', 
+                    'Pour batter onto a hot, greased pan. Flip when bubbles appear and cook until golden brown.'
+                ]
+            },
+            'shrimp': {
+                title: 'Garlic & Butter Shrimp',
+                prep: '5 minutes',
+                cook: '10 minutes',
+                servings: 2,
+                description: 'Quick, savory, and perfect over rice or with crusty bread for dipping. Cooked with fresh herbs in just 10 minutes.',
+                ingredients: [
+                    '1 lb Shrimp (peeled and deveined)', '4 tbsp Butter', '4 cloves Garlic, minced', '1 Lemon', 'Fresh Parsley and Herbs'
+                ],
+                instructions: [
+                    'Melt butter and sauté garlic for 1 minute.', 'Add shrimp and cook until pink (3-5 mins).', 
+                    'Squeeze fresh lemon juice over shrimp. Stir in parsley and serve immediately with rice or pasta.'
+                ]
+            },
+            'cookies-grid': {
+                title: 'Chocolate Chip Cookies',
+                prep: '15 minutes',
+                cook: '12 minutes',
+                servings: 18,
+                description: 'Soft, chewy, and loaded with gooey chocolate chips. This recipe is simple and always a crowd-pleaser.',
+                ingredients: [
+                    '1 cup Butter, softened', '3/4 cup Granulated Sugar', '3/4 cup Brown Sugar', '2 large Eggs', '1 tsp Vanilla Extract', '2 1/4 cups Flour', '1 tsp Baking Soda', '1 bag Chocolate Chips'
+                ],
+                instructions: [
+                    'Preheat oven to 375°F (190°C).', 'Cream together butter and sugars.', 'Beat in eggs and vanilla.',
+                    'Stir in flour and baking soda until just combined.', 'Fold in chocolate chips.', 'Drop onto baking sheets and bake for 9-12 minutes.'
+                ]
+            },
+            'adobo': {
+                title: 'Chicken Adobo',
+                prep: '10 minutes',
+                cook: '45 minutes',
+                servings: 4,
+                description: 'A traditional Filipino favorite: chicken braised in vinegar, soy sauce, garlic, and onions until tender and flavorful.',
+                ingredients: [
+                    '1.5 lb Chicken pieces', '1/2 cup Soy Sauce', '1/2 cup Vinegar', '1 head Garlic, minced', '1 large Onion, sliced', 'Bay leaves', 'Black peppercorns'
+                ],
+                instructions: [
+                    'Combine all ingredients in a pot and bring to a boil.', 'Lower heat, cover, and simmer for 30 minutes.', 
+                    'Remove lid and continue simmering for 15 minutes, allowing the sauce to thicken slightly. Serve hot with rice.'
+                ]
+            },
+            'fried-chicken': {
+                title: 'Crispy Fried Chicken',
+                prep: '30 minutes',
+                cook: '20 minutes',
+                servings: 4,
+                description: 'The classic comfort food: crispy outside, juicy inside. Best served with gravy and mashed potatoes.',
+                ingredients: [
+                    '1 whole Chicken (cut into 8 pieces)', '2 cups Flour', '1 tbsp Paprika', '1 tbsp Garlic Powder', '1 tsp Salt', '1/2 tsp Black Pepper', 'Oil (for frying)', '2 Eggs'
+                ],
+                instructions: [
+                    'Mix flour and spices in a shallow dish.', 'Dip chicken pieces in whisked eggs, then coat thoroughly in the flour mixture.', 
+                    'Heat oil in a deep pan.', 'Fry chicken in batches for 6-8 minutes per side until golden brown and cooked through (internal temp 165°F).'
+                ]
+            },
+            'lemon-bars': {
+                title: 'Classic Lemon Bars',
+                prep: '20 minutes',
+                cook: '35 minutes',
+                servings: 16,
+                description: 'Sweet and tart, fresh, zesty, and creamy. The perfect dessert for a summer picnic or anytime treat.',
+                ingredients: [
+                    '1 cup Flour', '1/2 cup Cold Butter', '1/4 cup Powdered Sugar', '4 large Eggs', '1 1/2 cups Granulated Sugar', '1/4 cup Lemon Juice', 'Lemon Zest'
+                ],
+                instructions: [
+                    'Preheat oven to 350°F (175°C).', 'Mix crust ingredients and press into a pan; bake for 15 mins.', 
+                    'Whisk filling ingredients.', 'Pour filling over the warm crust and bake for an additional 20 minutes.', 
+                    'Cool completely, dust with powdered sugar, and serve.'
+                ]
+            },
+           
+             'cookies': {
+                title: 'Chocolate Chip Cookies (List)',
+                prep: '15 minutes',
+                cook: '12 minutes',
+                servings: 18,
+                description: 'Soft, chewy, and loaded with gooey chocolate chips. Recipe identical to the featured one.',
+                ingredients: [
+                    'Flour', 'Sugar', 'Butter', 'Chocolate Chips'
+                ],
+                instructions: [
+                    'See featured recipe instructions.'
+                ]
+            },
+            'carbonara': {
+                title: 'Classic Spaghetti Carbonara (List)',
+                prep: '20 minutes',
+                cook: '10 minutes',
+                servings: 4,
+                description: 'Classic creamy pasta with egg and cheese.',
+                ingredients: [
+                    'Spaghetti', 'Eggs', 'Cheese', 'Pancetta'
+                ],
+                instructions: [
+                    'See featured recipe instructions.'
+                ]
+            }
+        };
+
+        function getRecipeContentHtml(recipe) {
+            let html = `<p>${recipe.description}</p>`;
+            html += `<p style="margin-top: 20px;">**Prep Time:** ${recipe.prep} | **Cook Time:** ${recipe.cook} | **Servings:** ${recipe.servings}</p>`;
+
+            html += `<h3 style="margin-top: 30px; color: var(--primary-color);">Ingredients:</h3>`;
+            html += `<ul style="list-style-type: disc; margin-left: 20px;">${recipe.ingredients.map(item => `<li>${item}</li>`).join('')}</ul>`;
+
+            html += `<h3 style="margin-top: 30px; color: var(--primary-color);">Instructions:</h3>`;
+            html += `<ol style="margin-left: 20px;">${recipe.instructions.map(item => `<li>${item}</li>`).join('')}</ol>`;
+            
+            return html;
+        }
+
+        /* RECIPE MODAL FUNCTIONALITY */
+        
+        const modalOverlay = document.getElementById('recipeModalOverlay');
+        
+        if (modalOverlay) {
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const modalBody = document.getElementById('modalRecipeBody');
+            const modalTitle = document.getElementById('modalRecipeTitle');
+
+            function openRecipeModal(event) {
+                event.preventDefault(); 
+                
+                const recipeId = event.currentTarget.getAttribute('data-recipe-id');
+                const recipe = recipeData[recipeId]; 
+
+                if (recipe) {
+                    modalTitle.textContent = recipe.title;
+                    modalBody.innerHTML = getRecipeContentHtml(recipe);
+                    
+                    modalOverlay.style.display = 'block';
+                } else {
+                    alert(`Recipe details for "${recipeId}" not found in the data source!`);
+                }
+            }
+
+            function closeRecipeModal() {
+                modalOverlay.style.display = 'none';
+            }
+            closeModalBtn.addEventListener('click', closeRecipeModal);
+            
+            window.addEventListener('click', (event) => {
+                if (event.target === modalOverlay) {
+                    closeRecipeModal();
+                }
+            });
+            document.querySelectorAll('.primary-button.recipe-button, .primary-button.list-button').forEach(button => {
+                button.addEventListener('click', openRecipeModal);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+/* --- Global Variables & Reset --- */
+:root {
+    --primary-color: #d8574a; 
+    --secondary-color: #55c255; 
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-light: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* --- General Containers & Reusable Styles --- */
+.page-content {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 50px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.primary-button {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    text-decoration: none; 
+    display: inline-block; 
+}
+
+.primary-button:hover {
+    background-color: #4aa84a;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo img {
+    height: 60px;
+    border-radius: 50%;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    margin-left: 30px;
+    font-size: 1em;
+    padding: 5px 0;
+    transition: border-bottom 0.2s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    border-bottom: 2px solid var(--text-light);
+}
+
+/* Hamburger button is hidden by default on Desktop */
+#open-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.8em;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* --- Mobile Menu Drawer --- */
+#mobile-menu-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    padding-top: 50px;
+    text-align: center;
+}
+
+#mobile-menu-drawer.is-open {
+    transform: translateX(0);
+}
+
+#close-menu-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 50px;
+}
+
+.mobile-nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 1.8em;
+    padding: 10px 0;
+    display: block;
+}
+
+/* --- Footer Styling --- */
+.footer {
+    background: #cccccc;
+    color: var(--text-dark); 
+    padding: 20px 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.3s;
+    filter: none;
+}
+
+.social-icons a:hover img {
+    opacity: 0.7; 
+}
+
+
+/*  DESKTOP STYLES */
+/* HOME DESKTOP */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+}
+.hero-text {
+    flex: 1;
+    padding-right: 50px;
+}
+.hero-text h1 {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+.hero-text p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.hero-image-single { 
+    flex: 1;
+    max-width: 500px;
+}
+.hero-image-single img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ABOUT DESKTOP */
+.about-section {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 50px 0;
+}
+.about-image-container {
+    flex-shrink: 0;
+    width: 350px;
+}
+.blogger-photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.about-text-container { flex-grow: 1; }
+.about-text-container p { 
+    margin-bottom: 15px; 
+    font-size: 1.2em; 
+    line-height: 1.7; 
+}
+
+/* MENU (CATEGORIES & RECIPES) DESKTOP */
+.categories-section {
+    display: flex; 
+    justify-content: center; 
+    padding: 50px 0 20px 0;
+}
+.category-placeholder { 
+    display: none;
+}
+.category-list-container { 
+    padding-left: 0; 
+    max-width: 800px;
+    text-align: center;
+}
+.category-list-container .section-title,
+.category-list-container .category-subtext-new {
+    text-align: center;
+}
+.category-subtext-new { 
+    font-size: 1.15em;
+    font-style: normal; 
+    margin-bottom: 40px; 
+    color: #555;
+}
+
+.main-category-list {
+    list-style: none;
+    padding-left: 0;
+    columns: 2;
+    column-gap: 50px;
+    display: inline-block; 
+    text-align: left;
+}
+.main-category-list > li { margin-bottom: 20px; break-inside: avoid; }
+.category-heading { 
+    font-weight: bold; 
+    font-size: 1.3em; 
+    color: var(--primary-color); 
+    display: block; 
+    margin-bottom: 10px; 
+}
+.sub-category-list { list-style: disc; padding-left: 20px; margin-top: 5px; }
+.sub-category-list li {
+    font-size: 1.1em; 
+    line-height: 1.8; 
+}
+
+
+.recipes-content { padding-top: 50px; padding-bottom: 50px; }
+.featured-title { text-align: center; font-size: 2.5em; }
+.featured-subtext { text-align: center; margin-bottom: 40px; }
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+.recipe-card {
+    background: var(--bg-light);
+    padding: 25px;
+    border-radius: 8px;
+    border-top: 5px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.recipe-card .recipe-title { order: -1; font-size: 1.4em; color: var(--primary-color); margin-bottom: 15px; }
+.recipe-card .recipe-button { width: 100%; margin-top: 20px; }
+.more-recipes-list { display: flex; gap: 50px; padding-top: 30px; border-top: 1px solid #ddd; }
+.recipe-list-column { flex: 1; }
+.recipe-group li { border-bottom: 1px dashed #ccc; padding: 15px 0; margin-bottom: 15px; }
+.recipe-list-item-title { font-weight: bold; color: var(--primary-color); display: block; font-size: 1.1em; }
+.list-button { padding: 5px 15px; font-size: 0.9em; margin-top: 10px; }
+
+/* CONTACT DESKTOP */
+.contact-content { text-align: center; padding-top: 50px; padding-bottom: 50px; }
+.contact-title { font-size: 2.5em; }
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    padding-top: 40px;
+    text-align: left;
+}
+.contact-info { flex: 1; max-width: 350px; }
+.contact-info h3 { font-size: 1.4em; color: var(--primary-color); margin-top: 25px; margin-bottom: 10px; }
+.contact-info p { margin-bottom: 5px; }
+.contact-info a { color: var(--text-dark); text-decoration: none; }
+.social-links { list-style: none; padding: 0; margin-top: 10px; }
+.contact-form {
+    flex: 1;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--bg-light);
+    border-radius: 8px;
+}
+.contact-form label { font-weight: bold; margin-top: 15px; margin-bottom: 5px; }
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 1em;
+    outline: none;
+}
+.contact-form textarea { border-radius: 10px; resize: vertical; }
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary-color); }
+.form-submit-button { margin-top: 25px; align-self: flex-start; }
+
+
+/* --- RECIPE MODAL STYLES --- */
+/* Modal Background Overlay */
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85); 
+    backdrop-filter: blur(5px); 
+}
+
+/* Modal Content Container */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 90%; 
+    max-width: 800px; 
+}
+
+/* Modal text styling */
+.modal-content p, .modal-content ul, .modal-content ol {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+
+/* --- 3. MEDIA QUERIES  --- */
+/* --- Tablet Styles --- */
+@media (max-width: 991px) {
+    .navbar {
+        padding: 10px 30px;
+    }
+    .page-content {
+        padding: 0 30px;
+    }
+
+    /* Footer Tablet */
+    .footer {
+        padding: 20px 30px;
+    }
+
+    /* Home Tablet */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .hero-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    .hero-text h1 { font-size: 2.5em; }
+    .hero-image-single {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    /* About Tablet */
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
+        text-align: center;
+    }
+    .about-image-container {
+        width: 60%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    /* Menu (Categories) Tablet */
+    .categories-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
+    }
+    .category-list-container {
+        padding-left: 0;
+        text-align: center;
+    }
+    .main-category-list {
+        columns: 2;
+        column-gap: 30px;
+        display: inline-block;
+    }
+
+    /* Menu (Recipes) Tablet */
+    .featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .more-recipes-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Contact Tablet */
+    .contact-grid {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+    .contact-info, .contact-form {
+        max-width: 80%;
+        text-align: center;
+    }
+    .contact-info .social-links {
+        padding-left: 0;
+    }
+    .form-submit-button {
+        align-self: center;
+    }
+    
+    /* Responsive Modal Adjustments */
+    .modal-content {
+        margin: 5% auto; 
+    }
+}
+
+/* --- Mobile Styles --- */
+@media (max-width: 575px) {
+    /* Header/Navigation Mobile */
+    .navbar {
+        padding: 10px 20px;
+    }
+    .navbar .logo img {
+        height: 50px;
+    }
+    .navbar .nav-links {
+        display: none;
+    }
+    #open-menu-btn {
+        display: block;
+    }
+    .page-content {
+        padding: 20px 20px;
+        margin: 20px auto;
+        box-shadow: none;
+    }
+
+    /* Footer Mobile */
+    .footer {
+        padding: 15px 20px;
+    }
+    .footer-content {
+        flex-direction: column; 
+        gap: 10px;
+    }
+    .social-icons img {
+        width: 25px;
+        height: 25px;
+    }
+
+    /* Home Mobile */
+    .hero-text h1 { font-size: 2em; }
+    .hero-image-single {
+        max-width: 100%;
+    }
+
+    /* Menu (Categories) Mobile */
+    .main-category-list {
+        columns: 1;
+    }
+
+    /* Menu (Recipes) Mobile */
+    .featured-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Contact Mobile */
+    .contact-grid {
+        gap: 30px;
+        padding-top: 20px;
+    }
+    .contact-info, .contact-form {
+        max-width: 100%;
+    }
+    .contact-info {
+        text-align: center;
+    }
+
+    /* Modal */
+    .modal-content {
+        margin: 0;
+        width: 100%; 
+        height: 100%; 
+        border-radius: 0; 
+        padding: 20px;
+        overflow-y: scroll; 
+    }
+}

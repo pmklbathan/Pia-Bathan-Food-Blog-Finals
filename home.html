@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | DELICIOUS RECIPES</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="mobile-menu-drawer">
+        <button id="close-menu-btn" aria-label="Close Menu">&times;</button>
+        <nav class="mobile-nav-links">
+            <a href="home.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact Me</a>
+        </nav>
+    </div>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        <button id="open-menu-btn" aria-label="Open Menu">&#9776;</button> 
+        <nav class="nav-links">
+            <a href="home.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact Me</a>
+        </nav>
+    </header>
+
+   <main class="page-content home-desktop-content">
+    <section class="hero-section">
+        <div class="hero-text">
+            <h1>DELICIOUS RECIPES & FOOD STORIES</h1>
+            <p>Simple meals, sweet treats, and cooking tips made with love.</p>
+            <a href="menu.html" class="primary-button" style="text-decoration: none; display: inline-block;">
+                Explore Recipes
+            </a>
+        </div>
+        
+        <div class="hero-image-single"> 
+            <img src="img/main.png" alt="Food Image 1" class="hero-main-image">
+        </div>
+        </section>
+</main>
+
+    <footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2025 Pia Mikaela E. Bathan - Food Blog</p>
+        
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@piabathan1669" target="_blank" aria-label="YouTube">
+                <img src="img/yt.png" alt="YouTube">
+            </a>
+            <a href="https://www.instagram.com/bathan.pia/" target="_blank" aria-label="Instagram">
+                <img src="img/ig.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/pia.bathan" target="_blank" aria-label="Facebook">
+                <img src="img/fb.png" alt="Facebook">
+            </a>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        document.getElementById('open-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu-drawer').classList.add('is-open');
+        });
+        document.getElementById('close-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu-drawer').classList.remove('is-open');
+        });
+        
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu-drawer').classList.remove('is-open');
+            });
+        });
+    </script>
+</body>
+</html>
